@@ -1,0 +1,21 @@
+
+The Hand Shake
+
+The client opens a connection to a server where the server is listening on a port that supports TLS.
+
+This is the initiation of the Hand Shake.
+
+The Hand Shake is done in several steps whereby the client and server must be able to agree on several aspects to the setup
+of a secure connection. Which means that upon verification of the server (or mutual verification), they will agree to use
+a shared symmetric key with which to encrypt all subsequent messages between them.
+
+What attributes must they agree upon?
+
+1. TLS Protocol Version
+a. Recommended version: 1.2 or 1.1
+b. Note that 1.0 is NOT recommended, nor the earlier SSL versions such as SSLv3
+
+2. Cypher Suite
+a. Cipher Suite defines both a key exchange algorithm and a Cipher Spec
+b. Cipher Spec is the choice of encryption algorithm and MAC algorithm
+
