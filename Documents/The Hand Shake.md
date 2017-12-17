@@ -21,13 +21,13 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 * Note that 1.0 is NOT recommended, nor the earlier SSL versions such as SSLv3
 
 ### 2. Cipher Suite
-ex: AES-128 with SHA
+ex: ECDH-RSA-AES128-SHA
 
 A cipher suite contains an algorithm for each of the following:
-* key exchange
-* authentication
-* data encryption
-* message authentication = MAC algorithm
+* key exchange : ex: ECDH
+* authentication : ex: RSA
+* data encryption: AES-128
+* message authentication (MAC): ex: SHA1
 
 ### 3. Pre-master secret
 The client generates a 46-byte random number used in the generation of the symmetric encryption keys and the message authentication code (MAC) keys
