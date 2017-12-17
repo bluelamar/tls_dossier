@@ -17,8 +17,8 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 ## What attributes must they agree upon?
 
 ### 1. TLS Protocol Version
-a. Recommended version: 1.2 or 1.1
-b. Note that 1.0 is NOT recommended, nor the earlier SSL versions such as SSLv3
+* Recommended version: 1.2 or 1.1
+* Note that 1.0 is NOT recommended, nor the earlier SSL versions such as SSLv3
 
 ### 2. Cipher Suite
 ex: AES-128 with SHA
