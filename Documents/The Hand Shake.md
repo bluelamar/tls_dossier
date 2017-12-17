@@ -23,6 +23,8 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 ### 2. Cipher Suite
 ex: ECDH-RSA-AES128-SHA
 
+For a listing of Cipher suites using ECDH you can view the RFC https://tools.ietf.org/html/rfc4492#page-27
+
 A cipher suite contains an algorithm for each of the following:
 * key exchange : ex: ECDH
 * authentication : ex: RSA
@@ -43,15 +45,15 @@ Then both client and server create the session keys based on the Master secret:
 
 ## What messages are exchanged?
 
-### 1. Client sends cipher suite message:
+### 1. Client sends Cipher Suite message:
 * tls version
 * supported cipher suites(prioritized by the client)
 * data compression methods
 * 28 byte random number
 
-TODO 
+### TODO 
 
-### n. Client sends Change cipher spec:
+### n. Client sends Change Cipher Spec:
 client will start using the new session keys for hashing and encrypting messages
 client and server now start using the session keys to exchange all messages
 
