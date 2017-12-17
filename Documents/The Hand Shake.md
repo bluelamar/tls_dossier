@@ -1,7 +1,7 @@
 
 # The Hand Shake
 
-The client opens a connection to a server where the server is listening on a port that supports TLS.
+The client opens a connection to a server where the server is listening on a port that supports TLS (ex: TCP port 443).
 
 This is the initiation of the Hand Shake.
 
@@ -11,8 +11,8 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 
 ## Major goals of the Hand Shake
 - Cipher suite negotiation
-- Client Authentication of the server - prevents Man-in-the-Middle attacks. Optionally, the server authenticates the client : asymetric keys
-- Gemeration of the Session key information exchange : symetric keys
+- Client Authentication of the server - prevents Man-in-the-Middle attacks. Optionally, the server authenticates the client : asymmetric keys
+- Gemeration of the Session key information exchange : symmetric keys
 
 ## What attributes must they agree upon?
 
