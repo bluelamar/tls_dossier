@@ -29,7 +29,7 @@ A cipher suite contains an algorithm for each of the following:
 * key exchange : ex: ECDH
 * authentication : ex: RSA
 * data encryption: ex: AES-128
-* message authentication (MAC): ex: SHA1
+* message authentication (HMAC): ex: SHA1
 
 ### 3. Pre-master secret
 The client generates a 46-byte random number used in the generation of the Master secret.
