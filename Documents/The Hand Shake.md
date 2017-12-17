@@ -12,7 +12,7 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 ## Major goals of the Hand Shake
 - Cipher suite negotiation
 - Client Authentication of the server - prevents Man-in-the-Middle attacks. Optionally, the server authenticates the client : asymmetric keys
-- Gemeration of the Session key information exchange : symmetric keys
+- Gemeration of the Session keys : symmetric keys
 
 ## What attributes must they agree upon?
 
@@ -26,12 +26,11 @@ ex: ECDH-RSA-AES128-SHA
 A cipher suite contains an algorithm for each of the following:
 * key exchange : ex: ECDH
 * authentication : ex: RSA
-* data encryption: AES-128
+* data encryption: ex: AES-128
 * message authentication (MAC): ex: SHA1
 
 ### 3. Pre-master secret
-The client generates a 46-byte random number used in the generation of the symmetric encryption keys and the message authentication code (MAC) keys
-used to create master secret and session keys
+The client generates a 46-byte random number used in the generation of the Master secret.
 
 ### 4. Master secret
 The server and client each generate the 48 byte Master Secret based on the Pre-Master Secret.
