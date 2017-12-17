@@ -43,10 +43,15 @@ Then both client and server create the session keys based on the Master secret:
 
 ## What messages are exchanged?
 
-### 1. Client sends: tls version, supported cipher suites(prioritized by the client), data compression methods, 28 byte random number
+### 1. Client sends cipher suite message:
+* tls version
+* supported cipher suites(prioritized by the client)
+* data compression methods
+* 28 byte random number
 
+TODO 
 
-### n. Change cipher spec: message client sends to the server
+### n. Client sends Change cipher spec:
 client will start using the new session keys for hashing and encrypting messages
 client and server now start using the session keys to exchange all messages
 
