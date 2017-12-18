@@ -80,11 +80,24 @@ This message is encrypted with the servers public key:
 * a 46-byte random number 
 * the message authentication code (MAC) keys
 
-### TODO 
+### 8. Client sends a Digital Certificate Verify message:
+This message is signed with the client's private key.
+* message signature
 
-### n. Client sends Change Cipher Spec:
+### 9. Client sends Change Cipher Spec:
 client will start using the new session keys for hashing and encrypting messages
 client and server now start using the session keys to exchange all messages
+
+### 10. Client sends Finished message:
+This message is encrypted with this the chosen cipher and keys.
+
+### 11. The server sends a Change Cipher Spec
+This is an acknowledgement to the client.
+
+### 12. The server sends a Finished message:
+This is an acknowledgment to the client.
+
+This is the End of the Hand Shake
 
 
 
