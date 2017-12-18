@@ -45,11 +45,40 @@ Then both client and server create the session keys based on the Master secret:
 
 ## What messages are exchanged?
 
-### 1. Client sends Cipher Suite message:
+### 1. Client sends Hello message:
+The Hello contains the following attributes:
 * tls version
 * supported cipher suites(prioritized by the client)
 * data compression methods
 * 28 byte random number
+
+### 2. Server sends Hello back to the client:
+This message contains the following attributes:
+* chosen Cipher Suite based on the strongest suite that both the client and server support 
+* chosen data compression method
+* session id
+* random number
+
+### 3. Server sends its digital certificate:
+
+### 4. Optionally, the server sends a Digital Certificate request:
+This message is sent only if the server requires the client to authenticate.
+* list of the types of digital certificates supported
+* distinguished names(DN) of acceptable certificate authorities
+
+### 5. Server sends Hello Done message:
+
+### 6. Optionally, the client sends a Digital certificate response
+If the client received the Digital Certificate request (message 4 above), then the client
+Only 1 of the following attributes is sent:
+* clients digital certificate
+* no certificate alert
+
+### 7. Client sends a Client Key Exchange message:
+This message is encrypted with the servers public key:
+* pre-master secret
+* a 46-byte random number 
+* the message authentication code (MAC) keys
 
 ### TODO 
 
