@@ -11,8 +11,8 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 
 ## Major goals of the Hand Shake
 - Cipher suite negotiation
-- Client Authentication of the server - prevents Man-in-the-Middle attacks. Optionally, the server authenticates the client : asymmetric keys
-- Gemeration of the Session keys : symmetric keys
+- Client Authentication of the server - prevents Man-in-the-Middle attacks. Optionally, the server authenticates the client : **asymmetric keys**
+- Generation of the Session keys : **symmetric keys**
 
 ## What attributes must they agree upon?
 
@@ -42,6 +42,7 @@ Then both client and server create the session keys based on the Master secret:
 - server write MAC key : used for authentication and integrity check
 - client write key : used for message encryption
 - server write key : used for message encryption
+MAC:  message authentication code - calculated by a key against the message
 
 ## What messages are exchanged?
 
@@ -69,8 +70,7 @@ This message is sent only if the server requires the client to authenticate.
 ### 5. Server sends Hello Done message:
 
 ### 6. Optionally, the client sends a Digital certificate response
-If the client received the Digital Certificate request (message 4 above), then the client
-Only 1 of the following attributes is sent:
+If the client received the Digital Certificate request (message 4 above), then the client does only 1 of the following attributes is sent:
 * clients digital certificate
 * no certificate alert
 
@@ -89,7 +89,7 @@ client will start using the new session keys for hashing and encrypting messages
 client and server now start using the session keys to exchange all messages
 
 ### 10. Client sends Finished message:
-This message is encrypted with this the chosen cipher and keys.
+This message is encrypted with the chosen cipher and keys.
 
 ### 11. The server sends a Change Cipher Spec
 This is an acknowledgement to the client.
