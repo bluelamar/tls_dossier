@@ -21,15 +21,15 @@ shared symmetric keys with which to encrypt all subsequent messages between them
 * Note that 1.0 is NOT recommended, nor the earlier SSL versions such as SSLv3
 
 ### 2. Cipher Suite
-ex: ECDH-RSA-AES128-SHA
+ex: ECDH-RSA-AES128-SHA :
 
 For a listing of Cipher suites using ECDH you can view the RFC https://tools.ietf.org/html/rfc4492#page-27
 
 A cipher suite contains an algorithm for each of the following:
-* key exchange : ex: ECDH
-* authentication : ex: RSA
-* data encryption: ex: AES-128
-* message authentication (HMAC): ex: SHA1
+* key exchange : ex: ECDH, Elliptic-curve Diffie–Hellman public-private key pair algo
+* authentication : ex: RSA, Rivest–Shamir–Adleman public-private key pair algo
+* data encryption: ex: AES-128, Advanced Encryption Standard cipher
+* message authentication (HMAC): ex: SHA1, Secure Hash Algorithm produces 160-bit (20-byte) hash value as the message digest
 
 ### 3. Pre-master secret
 The client generates a 46-byte random number used in the generation of the Master secret.
